@@ -22,7 +22,9 @@ COUNTRY_PL = {
 
 def extract_aic_per_capita(*countries):
     # Wczytaj dane
-    data = pd.read_csv('Dane/Zrodla_danych/prc_ppp_ind__custom_19617759_linear.csv')
+    #prc_ppp_ind_1__custom_19794465_linear
+    data = pd.read_csv('Dane/Zrodla_danych/prc_ppp_ind__custom_19794531_linear.csv')
+    #data = pd.read_csv('Dane/Zrodla_danych/prc_ppp_ind__custom_19617759_linear.csv')
     
     # Filtrowanie po walucie i krajach
     filtered = data[(data['na_item'] != 'Volume indices of real expenditure per capita (in PPS_EU27_2020=100)') & (data['geo'].isin(countries))]

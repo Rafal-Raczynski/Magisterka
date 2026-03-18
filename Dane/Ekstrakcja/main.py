@@ -6,19 +6,19 @@ from extraxt_vehicles_number import extract_vehicles_number_new_regestration_and
 
 def main():
      extract_aic_per_capita(
-        'Poland', 'Denmark', 'Czechia', 'Germany', 'Netherlands', 'Spain'
+        'Poland', 'Denmark', 'Czechia', 'Germany', 'Spain'
     )
      extract_vehicles_number_new_regestration_and_percentage(
-        'Polska', 'Niemcy', 'Dania', 'Czechy', 'Holandia', 'Hiszpania'
+        'Polska', 'Niemcy', 'Dania', 'Czechy', 'Hiszpania'
     )
      extract_energy_price(
-        'Poland', 'Denmark', 'Czechia', 'Germany', 'Netherlands', 'Spain'
+        'Poland', 'Denmark', 'Czechia', 'Germany', 'Spain'
     )
      extract_oil_price_and_pl_exchange_rate(
-        'Poland', 'Denmark', 'Czechia', 'Germany', 'Netherlands', 'Spain'
+        'Poland', 'Denmark', 'Czechia', 'Germany',  'Spain'
     ) 
      extract_chargers(
-        'Polska', 'Niemcy', 'Dania', 'Czechy', 'Holandia', 'Hiszpania'
+        'Polska', 'Niemcy', 'Dania', 'Czechy', 'Hiszpania'
     )
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     df['Procent nowych rejestracji EV (Y)'] = df['Procent nowych rejestracji EV']
 
-    # Wybierz tylko potrzebne kolumny
+    # Wybierz tylko potrzebne kolumny (z rokiem)
     tabela_model = df[['Kraj',
                        'Rok (X1)',
                        'PKB per capita (PPS) (X2)',
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     tabela_model.to_csv(folder + "tabela_model.csv", index=False)
     print("Tabela modelowa zapisana jako tabela_model.csv")
 
-    # Tabela korelacji
+    # Tabela korelacji (z rokiem)
     corr_table = tabela_model[
         ['Rok (X1)',
          'PKB per capita (PPS) (X2)',
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     print(corr_table)
     corr_table.to_csv(folder + "tabela_korelacji.csv")
 
-    # Regresja liniowa Y ~ X1 + X2 + X3 + X4 + X5
+    # Regresja liniowa Y ~ X1 + X2 + X3 + X4 + X5 (z rokiem)
     X = tabela_model[
         ['Rok (X1)',
          'PKB per capita (PPS) (X2)',
