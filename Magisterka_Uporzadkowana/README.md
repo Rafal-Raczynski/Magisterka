@@ -1,30 +1,21 @@
-# Magisterka – uporządkowana kopia robocza
+# Magisterka – uporządkowany nowy model
 
-To jest kopia robocza projektu, stworzona w celu zachowania porządku bez ingerowania w oryginalne pliki źródłowe.
+`10_nowy_model` jest jedyną aktywną częścią folderu `Magisterka_Uporzadkowana`. Starsze kopie projektu znajdują się poza tym folderem.
 
 ## Struktura
 
-- 00_oryginalne – pliki z głównego katalogu, które nie zostały jeszcze przypisane do konkretnej kategorii
-- 01_dane_surowe – dane wejściowe w formie CSV/XLSX/Excel itp.
-- 02_dane_przetworzone – dane oczyszczone, scalone i przygotowane do modelowania
-- 03_notebooki – notebooki analityczne i eksperymenty
-- 04_skrypty – skrypty, narzędzia, moduły, dane pomocnicze i źródła
-- 05_modelowanie – modele, estymacje, prognozy i eksperymenty statystyczne
-- 06_wyniki – finalne tabele wynikowe i dane prognostyczne
-- 07_wykresy – wykresy, rysunki i grafiki wygenerowane z danych
-- 08_raporty_i_dokumentacja – praca, dokumentacja, materiały tekstowe i repozytoria pomocnicze
-- 09_archiwum – starsze pliki, kopie zapasowe i elementy nieaktywne
+- `10_nowy_model/dane_surowe` – oryginalne pliki wejściowe
+- `10_nowy_model/dane_przetworzone/tabele_panelowe` – przygotowane tabele samochodów, PKB, ludności, cen i ładowarek
+- `10_nowy_model/dane_przetworzone/panele_analityczne` – panele podstawowy i rozszerzony
+- `10_nowy_model/dane_przetworzone/scenariusze` – założenia i przyszłe zmienne wejściowe
+- `10_nowy_model/dane_przetworzone/wyniki_modelu` – parametry, dopasowania i prognozy
+- `10_nowy_model/dane_przetworzone/wykresy` – grafiki modelu
+- `10_nowy_model/skrypty/01_przygotowanie_danych` – budowa tabel i paneli
+- `10_nowy_model/skrypty/02_modelowanie` – estymacja i prognoza
+- `10_nowy_model/skrypty/03_wizualizacja` – wykresy
 
-## Zasada
+## Zakres
 
-- oryginalny projekt pozostaje nienaruszony
-- tutaj utrzymujemy porządek i strukturę dla dalszej pracy
-- w razie potrzeby można łatwo przenieść lub dopisać nowe materiały bez mieszania kontekstów
+Model dotyczy prognozy udziału BEV + PHEV w nowych rejestracjach samochodów osobowych w Polsce. Dane historyczne pochodzą z porównywalnego panelu państw europejskich, a dane o ładowarkach są używane w panelu rozszerzonym od 2020 roku.
 
-## Dodatkowo
-
-W razie potrzeby można utworzyć w tej strukturze podkatalogi np.:
-- 05_modelowanie/01_modele
-- 05_modelowanie/02_prognozy
-- 06_wyniki/2026
-- 07_wykresy/ev
+Oryginalny projekt poza `Magisterka_Uporzadkowana` pozostaje nietknięty.

@@ -1,8 +1,0 @@
-[project]
-name = "Magisterka"
-version = "0.1.0"
-dependencies = [
-    "matplotlib>=3.11.1",
-    "numpy>=2.4.6",
-    "pandas",
-]
