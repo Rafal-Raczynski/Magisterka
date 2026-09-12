@@ -1,0 +1,4 @@
+typ_pojazdu,rodzaj_energii,zuzycie_na_100_km,jednostka
+bev,energia_elektryczna,18,kWh
+samochod_benzynowy,benzyna,7,litr
+samochod_diesla,diesel,6,litr

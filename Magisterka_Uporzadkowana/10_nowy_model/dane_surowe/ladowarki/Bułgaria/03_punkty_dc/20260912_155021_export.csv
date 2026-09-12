@@ -1,0 +1,8 @@
+﻿"Category","Slow DC recharging point (P < 50kW)","Fast DC recharging point (50kW ≤ P < 150kW)","Level 1 - Ultra-fast DC recharging point (150kW ≤ P < 350kW)","Level 2 - Ultra-fast DC recharging point (P ≥ 350kW)"
+"2020",10,23,4,
+"2021",40,106,25,
+"2022",55,146,61,8
+"2023",68,232,93,66
+"2024",148,575,395,10
+"2025",160,856,614,111
+"2026",166,938,682,164
