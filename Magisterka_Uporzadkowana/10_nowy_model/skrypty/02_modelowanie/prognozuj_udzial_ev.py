@@ -9,7 +9,7 @@ KATALOG_PROJEKTU = Path(__file__).resolve().parents[2]
 KATALOG_DANYCH = KATALOG_PROJEKTU / "dane_przetworzone"
 PLIK_PANELU = KATALOG_DANYCH / "panele_analityczne" / "panel_analityczny_podstawowy.csv"
 PLIK_SCENARIUSZA = KATALOG_DANYCH / "scenariusze" / "scenariusz_ev_2026_2040.csv"
-KATALOG_WYNIKOW = KATALOG_DANYCH / "wyniki_modelu"
+KATALOG_WYNIKOW = KATALOG_PROJEKTU / "wyniki" / "wyniki_modelu"
 PLIK_HISTORII = KATALOG_WYNIKOW / "wyniki_modelu_ev_historyczne.csv"
 PLIK_PROGNOZY = KATALOG_WYNIKOW / "prognoza_udzialu_ev_2026_2040.csv"
 PLIK_PARAMETROW = KATALOG_WYNIKOW / "parametry_modelu_ev.csv"
@@ -87,7 +87,12 @@ def main() -> None:
         return
 
     scenariusz = scenariusz.dropna(subset=["panstwo", "rok", "pkb_per_capita_pps", "relacja_kosztu_ev_do_benzyny"]).copy()
-    scenariusz = scenariusz.rename(columns={"pkb_per_capita_pps": "pkb", "relacja_kosztu_ev_do_benzyny": "relacja_kosztu"})
+    scenariusz = scenariusz.rename(
+        columns={
+            "pkb_per_capita_pps": "pkb",
+            "relacja_kosztu_ev_do_benzyny": "relacja_kosztu",
+        }
+    )
     scenariusz["polityka_ue_etap"] = pd.cut(
         scenariusz["rok"],
         bins=[-float("inf"), 2019, 2024, 2034, float("inf")],
@@ -97,6 +102,12 @@ def main() -> None:
     x_przyszlosc = macierz_modelu(scenariusz, panstwa, lata)
     x_przyszlosc = x_przyszlosc.reindex(columns=x.columns, fill_value=0)
     scenariusz["prognozowany_udzial_ev_procent"] = sigmoid(model.predict(x_przyszlosc)) * 100
+    scenariusz = scenariusz.rename(
+        columns={
+            "pkb": "pkb_per_capita_pps",
+            "relacja_kosztu": "relacja_kosztu_ev_do_benzyny",
+        }
+    )
     scenariusz.to_csv(PLIK_PROGNOZY, index=False, encoding="utf-8-sig")
     print(f"Zapisano prognozę: {PLIK_PROGNOZY}")
 

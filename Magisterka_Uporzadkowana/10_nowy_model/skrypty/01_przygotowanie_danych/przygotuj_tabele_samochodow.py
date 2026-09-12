@@ -105,6 +105,19 @@ def przygotuj_dane_panstwa(katalog_panstwa: Path) -> pd.DataFrame:
         )
 
     wynik = wynik.rename(columns=nazwy_kolumn)
+    wynik["szacowana_calkowita_flota_samochodow_osobowych"] = (
+        wynik["liczba_ev_we_flocie"]
+        / (wynik["procent_ev_we_flocie"].where(wynik["procent_ev_we_flocie"] > 0) / 100)
+    )
+    wynik["szacowana_liczba_wszystkich_nowych_rejestracji"] = (
+        wynik["liczba_ev_w_nowych_rejestracjach"]
+        / (
+            wynik["procent_ev_w_nowych_rejestracjach"].where(
+                wynik["procent_ev_w_nowych_rejestracjach"] > 0
+            )
+            / 100
+        )
+    )
     kolumny_analityczne = [
         "panstwo",
         "rok",
@@ -120,6 +133,8 @@ def przygotuj_dane_panstwa(katalog_panstwa: Path) -> pd.DataFrame:
         "procent_ev_we_flocie",
         "liczba_ev_w_nowych_rejestracjach",
         "procent_ev_w_nowych_rejestracjach",
+        "szacowana_calkowita_flota_samochodow_osobowych",
+        "szacowana_liczba_wszystkich_nowych_rejestracji",
     ]
 
     return wynik[kolumny_analityczne]
