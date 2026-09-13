@@ -1,0 +1,4 @@
+parametr,wartosc,jednostka,opis
+przebieg_roczny_na_samochod,15000,km/auto/rok,Średni roczny przebieg samochodu EV
+zuzycie_energii_ev,18,kWh/100 km,Średnie zużycie energii przez samochód EV
+straty_ladowania,0.10,udział,Straty energii podczas ładowania zapisane jako 10 procent
